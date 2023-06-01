@@ -1,12 +1,20 @@
 import java.util.*;
-
 public class BreadthFirstSearch<V> implements Search<V> {
     private WeightedGraph<V> graph;
 
+    /**
+     * constructs a BreadthFirstSearch object with the specified graph
+     * @param graph the graph to be searched
+     */
     public BreadthFirstSearch(WeightedGraph<V> graph) {
         this.graph = graph;
     }
 
+    /**
+     * performs breadth first search starting from the specified startVertex and returns the visited vertices in the order they were visited
+     * @param startVertex the starting vertex for the breadth-first search
+     * @return a list of visited vertices in the order they were visited
+     */
     public List<Vertex<V>> BreadthFirstSearch(Vertex<V> startVertex) {
         List<Vertex<V>> visited = new ArrayList<>();
         Queue<Vertex<V>> queue = new LinkedList<>();
@@ -30,6 +38,10 @@ public class BreadthFirstSearch<V> implements Search<V> {
         return visited;
     }
 
+    /**
+     * @printBFS performs breadth first search starting from the specified startVertex and prints the visited vertices
+     * @param startVertex the starting vertex for the breadth-first search
+     */
     public void printBFS(Vertex<V> startVertex) {
         Set<Vertex<V>> visited = new HashSet<>();
         Queue<Vertex<V>> queue = new LinkedList<>();
